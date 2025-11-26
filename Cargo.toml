@@ -1,0 +1,13 @@
+[package]
+name = "cfw-identicon"
+version = "0.1.0"
+edition = "2021"
+authors = ["Connor Hindley <conn.hindley@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+console_error_panic_hook = "0.1.7"
+identicon-rs = "7.0.1"
+worker = { version = "0.7" }
