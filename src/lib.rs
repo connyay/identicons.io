@@ -41,7 +41,11 @@ async fn fetch(req: Request, _env: Env, _ctx: Context) -> Result<Response> {
 fn log_request(req: &Request) {
     let cf = req.cf().expect("CF object should be present");
     console_log!(
-        "{} {}, located at: {:?}, within: {}",
+        "{} {} {}, located at: {:?}, within: {}",
+        req.headers()
+            .get("CF-Connecting-IP")
+            .unwrap_or_default()
+            .unwrap_or_default(),
         req.method().to_string(),
         req.path(),
         cf.coordinates().unwrap_or_default(),
