@@ -11,3 +11,5 @@ crate-type = ["cdylib"]
 console_error_panic_hook = "0.1.7"
 identicon-rs = "7.0.1"
 worker = { version = "0.7" }
+md5 = "0.7"
+image = { version = "0.25", default-features = false, features = ["png"] }
